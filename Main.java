@@ -4,21 +4,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			Scanner sc=new Scanner(System.in);
-			int x,sum=0;
-			int[] arr1=new int[100];
-			int[] arr2=new int[100];
-			x=sc.nextInt();
-			for(int i=0;i<x;i++){
-				arr1[i]=sc.nextInt();
-				arr2[i]=sc.nextInt();
+			Scanner sc=new Scanner (System.in);
+			int k=sc.nextInt();
+			int n=sc.nextInt();
+			int w=sc.nextInt();
+			int x=0;
+			for(int i=1;i<=w;i++){
+				x=x+k*i;
 			}
-			for(int i=0;i<x;i++){
-				int y=arr2[i]-arr1[i];
-				if(y>=2){
-					sum=sum+1;
-				}
+			if(x>=n){
+				System.out.println(x-n);
 			}
-				System.out.println(sum);
+			else{
+				System.out.println("0");
+			}
 	}
+
 }

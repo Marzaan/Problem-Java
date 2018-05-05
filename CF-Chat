@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Scanner sc=new Scanner(System.in);
+			int i,y,sum=0;
+			String s;
+			s=sc.nextLine();
+			char[] x=s.toCharArray();
+			for(i=0;i<s.length();i++){
+				if(ex(x,i)){
+					sum=sum+1;
+				}
+				else{
+					continue;
+				}
+			}
+			if(sum%2==0){
+				prnt("CHAT WITH HER!");
+			}
+			else{
+				prnt("IGNORE HIM!");
+			}
+	}
+	static boolean ex(char[] a,int k){
+		int flg=0;
+		if(k>0){
+			for(int j=k-1;j>=0;j--){
+				if(a[k]==a[j]){
+					flg=1;
+					break;
+				}
+			}
+		}
+		if(flg==0)
+			return true;
+		else
+			return false;
+	}
+	static void prnt(Object x){
+		System.out.println(x);
+	}
+}

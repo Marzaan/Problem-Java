@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner (System.in);
+		int x=sc.nextInt();
+		for(int i=x+1;;i++){
+			if(meth1(i)){
+				System.out.println(i);
+				break;
+			}
+		}
+	}
+	static Boolean meth1(int x){
+		int sum=0;
+		String str;
+		str=String.valueOf(x);
+		char ch[]=str.toCharArray();
+		for(int j=0;j<ch.length;j++){
+			if(meth2(ch,j)){
+				sum++;
+			}
+			else{
+				return false;
+			}
+		}
+		return true;
+	}
+	static Boolean meth2(char ch2[],int k){
+		if(k>0){
+			for(int l=k-1;l>=0;l--){
+				if(ch2[k]==ch2[l]){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}
